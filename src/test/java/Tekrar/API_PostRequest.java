@@ -1,4 +1,4 @@
-package API_Testing;
+package Tekrar;
 
 import io.restassured.http.ContentType;
 import io.restassured.path.json.JsonPath;

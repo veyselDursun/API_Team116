@@ -1,4 +1,4 @@
-package API_Testing;
+package Tekrar;
 
 import io.restassured.http.ContentType;
 import io.restassured.path.json.JsonPath;
@@ -17,7 +17,7 @@ public class API_GetRequest {
     public void get01(){
 
         // 1- Request URL ve BODY olustur
-        String url="https://jsonplaceholder.typicode.com/posts/44";
+        String url="ttps://jsonplaceholder.typicode.com/posts/44";
 
         // 2- Expected Data olustur
         JSONObject expentedBody = new JSONObject();
