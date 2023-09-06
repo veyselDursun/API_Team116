@@ -8,6 +8,7 @@ import org.junit.Assert;
 import org.junit.Test;
 
 import static io.restassured.RestAssured.given;
+import static org.junit.Assert.assertEquals;
 
 public class C15_Post_ExpectedDataVeJsonPathIleAssertion {
 
@@ -83,6 +84,7 @@ public class C15_Post_ExpectedDataVeJsonPathIleAssertion {
         Assert.assertEquals(expdata.get("firstname"),resJP.get("booking.firstname"));
         Assert.assertEquals(expdata.get("lastname"),resJP.get("booking.lastname"));
         Assert.assertEquals(expdata.get("totalprice"),resJP.get("booking.totalprice"));
+
 
         // reqbody.get(booking.firstname)  expbody(firstname)
 

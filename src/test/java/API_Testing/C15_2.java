@@ -27,6 +27,7 @@ public class C15_2 {
                                  },
                 “additionalneeds” : “wi-fi”
             }
+
             ResponseBody
               {
                 “bookingid”: 24,
@@ -47,6 +48,7 @@ public class C15_2 {
 
     @Test
     public void expected01(){
+
         //1- Endpoint ve RequestBody Hazırlama
         String  url="https://restful-booker.herokuapp.com/booking";
         JSONObject inner=new JSONObject();
@@ -85,7 +87,9 @@ public class C15_2 {
         assertEquals(expdata.getJSONObject("booking").getJSONObject("bookingdates").get("checkout"),resJP.get("booking.bookingdates.checkout"));
         assertEquals(expdata.getJSONObject("booking").get("additionalneeds"),resJP.get("booking.additionalneeds"));
 
-        // reqbody.get(booking.firstname)  expbody(firstname)
+        // reqbody.get(booking.firstname)  expbody(firstname
+
+
 
     }
 
