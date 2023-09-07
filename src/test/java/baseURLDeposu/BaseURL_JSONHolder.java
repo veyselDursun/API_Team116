@@ -4,7 +4,7 @@ import io.restassured.builder.RequestSpecBuilder;
 import io.restassured.specification.RequestSpecification;
 import org.junit.Before;
 
-public class baseURL_JSONHolder {
+public class BaseURL_JSONHolder {
 
     // BaseURL olustururken RequestSpecification interface inden bir specobje olusturduk
 

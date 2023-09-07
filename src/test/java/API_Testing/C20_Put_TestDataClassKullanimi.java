@@ -1,6 +1,6 @@
 package API_Testing;
 
-import baseURLDeposu.baseURL_JSONHolder;
+import baseURLDeposu.BaseURL_JSONHolder;
 import io.restassured.http.ContentType;
 import io.restassured.path.json.JsonPath;
 import io.restassured.response.Response;
@@ -11,7 +11,8 @@ import testDataDeposu.JSONPlaceData;
 
 import static io.restassured.RestAssured.given;
 
-public class C20_Put_TestDataClassKullanimi extends baseURL_JSONHolder {
+public class C20_Put_TestDataClassKullanimi extends BaseURL_JSONHolder {
+
         /*
         https://jsonplaceholder.typicode.com/posts/70 url'ine asagidaki body’e sahip bir
     PUT request yolladigimizda donen response’in
@@ -19,33 +20,33 @@ public class C20_Put_TestDataClassKullanimi extends baseURL_JSONHolder {
     Connection header degerinin “keep-alive”
     ve response body’sinin asagida verilen ile ayni oldugunu test ediniz
     Request Body
-    {
+      {
         "title": "Ahmet",
         "body": "Merhaba",
         "userId": 10,
         "id": 70
-    }
+      }
     Expected Data :
-    {
+      {
         "title": "Ahmet",
         "body": "Merhaba",
         "userId": 10,
         "id": 70
-    }
+      }
      */
 
     @Test
     public void testdata02(){
         //1-url ve request body hazırlama
+
         specJSONHolder.pathParams("pp1","posts","pp2",70);
 
-        JSONPlaceData jsonplacedata=new JSONPlaceData();
-
-        JSONObject reqdata=jsonplacedata.requestBodyOlusturJSON();
+        JSONPlaceData jsonplacedata = new JSONPlaceData();
+        JSONObject reqdata = jsonplacedata.requestBodyOlusturJSON();
 
         //2-expected data oluşturma
 
-        JSONObject expData=jsonplacedata.requestBodyOlusturJSON();
+        JSONObject expData = jsonplacedata.requestBodyOlusturJSON();
 
         //3-ResponseKaydet
 
@@ -58,7 +59,7 @@ public class C20_Put_TestDataClassKullanimi extends baseURL_JSONHolder {
 
         //4-Assertion
 
-        JsonPath resJP=response.jsonPath();
+        JsonPath resJP = response.jsonPath();
 
         Assert.assertEquals(jsonplacedata.basariliStatsuCode,response.getStatusCode());
         Assert.assertEquals(jsonplacedata.contentType,response.getContentType());

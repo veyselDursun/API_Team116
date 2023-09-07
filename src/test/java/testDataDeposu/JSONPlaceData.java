@@ -5,6 +5,7 @@ import org.json.JSONObject;
 import java.util.HashMap;
 
 public class JSONPlaceData {
+
     public int basariliStatsuCode = 200;
     public String contentType = "application/json; charset=utf-8";
     public String header = "keep-alive";
@@ -24,24 +25,15 @@ public class JSONPlaceData {
 
     public JSONObject requestBodyOlusturJSON() {
 
-
-    /*
-    {
-"title": "Ahmet",
-"body": "Merhaba",
-"userId": 10,
-"id": 70
-}
-     */
-
         JSONObject reqbody = new JSONObject();
         reqbody.put("title", "Ahmet");
         reqbody.put("body", "Merhaba");
-        reqbody.put("userId", 10.0);
-        reqbody.put("id", 70);
+        reqbody.put("userId",10);
+        reqbody.put("id",70);
 
         return reqbody;
     }
+
 
     public HashMap reqBodyOlusturMAP() {
 
@@ -52,6 +44,7 @@ public class JSONPlaceData {
         reqbody.put("id", 70.0);
 
         return reqbody;
-
     }
+
+
 }

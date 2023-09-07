@@ -1,9 +1,8 @@
 package API_Testing;
 
-import baseURLDeposu.baseURL_JSONHolder;
+import baseURLDeposu.BaseURL_JSONHolder;
 import io.restassured.http.ContentType;
 import io.restassured.response.Response;
-import org.junit.Assert;
 import org.junit.Test;
 import testDataDeposu.JSONPlaceData;
 
@@ -12,7 +11,7 @@ import java.util.HashMap;
 import static io.restassured.RestAssured.given;
 import static org.junit.Assert.assertEquals;
 
-public class C21_Put_DeSerialization extends baseURL_JSONHolder {
+public class C21_Put_DeSerialization extends BaseURL_JSONHolder {
     /*
    https://jsonplaceholder.typicode.com/posts/70 url'ine asagidaki
    body’e sahip bir PUT request yolladigimizda donen response’in

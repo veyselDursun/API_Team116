@@ -1,6 +1,6 @@
 package API_Testing;
 
-import baseURLDeposu.baseURL_JSONHolder;
+import baseURLDeposu.BaseURL_JSONHolder;
 import io.restassured.path.json.JsonPath;
 import io.restassured.response.Response;
 import org.json.JSONObject;
@@ -10,7 +10,7 @@ import testDataDeposu.JSONPlaceData;
 
 import static io.restassured.RestAssured.given;
 
-public class C19_Get_TestDataClassKullanimi extends baseURL_JSONHolder {
+public class C19_Get_TestDataClassKullanimi extends BaseURL_JSONHolder {
     /*
 
 https://jsonplaceholder.typicode.com/posts/22 url'ine bir GET request
@@ -32,16 +32,18 @@ Response body :(Expected Data)
         specJSONHolder.pathParams("pp1","posts","pp2",22);
 
         //2- Expected data
-
-        JSONPlaceData JsonPlaceData=new JSONPlaceData();
-        JSONObject expData=JsonPlaceData.expectedBodyOlusturJSON();
+        JSONPlaceData JsonPlaceData = new JSONPlaceData();
+        JSONObject expData = JsonPlaceData.expectedBodyOlusturJSON();
 
         //3-Response Kaydetme
-        Response response=given().spec(specJSONHolder).when().get("/{pp1}/{pp2}");
+        Response response = given().
+                        spec(specJSONHolder).
+                        when().
+                        get("{pp1}/{pp2}");
 
         //4-Assertion
 
-        JsonPath resJP=response.jsonPath();
+        JsonPath resJP = response.jsonPath();
 
         Assert.assertEquals(expData.get("userId"),resJP.get("userId"));
         Assert.assertEquals(expData.get("id"),resJP.get("id"));

@@ -1,6 +1,5 @@
 package API_Testing;
 
-import baseURL.baseURLHerOkuapp;
 import io.restassured.http.ContentType;
 import io.restassured.response.Response;
 import org.hamcrest.Matchers;
@@ -10,7 +9,7 @@ import org.junit.Test;
 import static io.restassured.RestAssured.given;
 import static org.hamcrest.Matchers.equalTo;
 
-public class C18_BaseUrlQueryParam extends baseURLHerOkuapp {
+public class C18_BaseUrlQueryParam extends baseURL.BaseURLHerOkuapp {
     /*
     https://restful-booker.herokuapp.com/booking endpointine
     asagidaki body’ye sahip bir POST request gonderdigimizde
