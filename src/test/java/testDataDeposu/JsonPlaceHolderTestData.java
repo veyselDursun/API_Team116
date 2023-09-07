@@ -24,7 +24,7 @@ return body;
         Map<String,Object> requestBodyMap = new HashMap<>();
         requestBodyMap.put("title", "Ahmet");
         requestBodyMap.put("body", "Merhaba");
-        requestBodyMap.put("userId", 10);
+        requestBodyMap.put("userId", 10.0);
         requestBodyMap.put("id", 70);
 
 
