@@ -38,11 +38,11 @@ Response Body -Expected Data
 
         specDummy.pathParams("pp1","api","pp2","v1","pp3","employee","pp4",3);
 
-        DummyData dummyData=new DummyData();
+        DummyData dummyData = new DummyData();
 
         HashMap<String,Object> expdata=dummyData.expDataOlustur();
 
-        Response response=given().spec(specDummy).when().get("/{pp1}/{pp2}/{pp3}/{pp4}");
+        Response response = given().spec(specDummy).when().get("{pp1}/{pp2}/{pp3}/{pp4}");
 
         HashMap<String,Object> resMAP=response.as(HashMap.class);
 
@@ -51,7 +51,11 @@ Response Body -Expected Data
         assertEquals(expdata.get("status"),resMAP.get("status"));
         assertEquals(expdata.get("message"),resMAP.get("message"));
 
+
         //expData.get("data").get("id")
+        //Usttekifomatla Json ile datalar getiriliyordu. Ama Map te asagidaki gibi getirmemiz gerekiyor.Map casting yapiyoz
+        //assertEquals(expdata.get("data").get("id")); bu sekliyle kabul etmiyor. Casting yapmamiz gerekiyor.
+        //assertEquals(((Map)(expdata.get("data"))).get("id"),
 
         assertEquals(((Map)(expdata.get("data"))).get("id"),((Map)(resMAP.get("data"))).get("id"));
         assertEquals(((Map)(expdata.get("data"))).get("employee_name"),((Map)(resMAP.get("data"))).get("employee_name"));

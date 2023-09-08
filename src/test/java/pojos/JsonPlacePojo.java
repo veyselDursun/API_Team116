@@ -18,7 +18,10 @@ public class JsonPlacePojo {
     private int id;
 
 
-    // 2- Variabllar için getter ve setter oluşturduk
+    // 2- Variabllar için getter ve setter oluşturduk.
+    // Get ve Set otomotik kisa yolda sag tusa basip
+    // Genarete dan sonra getter ve Setter basinca otomotik olusturuyor.
+
     public String getTitle() {
         return title;
     }
@@ -52,6 +55,8 @@ public class JsonPlacePojo {
     }
 
     // 3- Parametreli Constructor oluşturduk.
+    // Parametreli Constructor otomotik kisa yolda sag tusa basip
+    // Genarete dan sonra Constructer basinca otomotik olusturuyor.
     public JsonPlacePojo(String title, String body, int userId, int id) {
         this.title = title;
         this.body = body;
@@ -63,15 +68,19 @@ public class JsonPlacePojo {
     public JsonPlacePojo(){
 
     }
+
     // 5- toString () metdhodu oluşturalım
+    // toString otomotik kisa yolda sag tusa basip
+    // Genarete dan sonra toString basinca otomotik olusturuyor.
 
     @Override
     public String toString() {
         return "JsonPlacePojo{" +
                 "title='" + title + '\'' + //{title='Ahmet', body='Merhaba'........}
                 ", body='" + body + '\'' +
-                ", userID=" + userId +
+                ", userId=" + userId +
                 ", id=" + id +
                 '}';
     }
+
 }

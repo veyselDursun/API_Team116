@@ -36,16 +36,17 @@ public class C23_Put_PojoClass extends BaseURL_JSONHolder {
 
     @Test
     public void put01(){
+
         specJSONHolder.pathParams("pp1","posts","pp2",70);
 
-        JsonPlacePojo reqBody =new JsonPlacePojo("Ahmet","Merhaba",10,70);
+        JsonPlacePojo reqBody = new JsonPlacePojo("Ahmet","Merhaba",10,70);
 
-        JsonPlacePojo expData=new JsonPlacePojo("Ahmet","Merhaba",10,70);
+        JsonPlacePojo expData = new JsonPlacePojo("Ahmet","Merhaba",10,70);
 
-        Response response=given().spec(specJSONHolder).contentType(ContentType.JSON)
-                .when().body(reqBody).put("/{pp1}/{pp2}");
+        Response response = given().spec(specJSONHolder).contentType(ContentType.JSON)
+                          .when().body(reqBody).put("{pp1}/{pp2}");
 
-        JsonPlacePojo resPojo=response.as(JsonPlacePojo.class);
+        JsonPlacePojo resPojo = response.as(JsonPlacePojo.class);
 
         assertEquals(expData.getTitle(),resPojo.getTitle());
         assertEquals(expData.getBody(),resPojo.getBody());

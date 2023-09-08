@@ -4,9 +4,6 @@ import java.util.HashMap;
 
 public class DummyData {
 
-    public int statusCode=200;
-    public String contentType="application/json";
-
     /*
     {
      "status":"success",
@@ -20,6 +17,10 @@ public class DummyData {
      "message":"Successfully! Record has been fetched."
      }
      */
+
+    public int statusCode=200;
+    public String contentType="application/json";
+
     public HashMap dataBodyOlustur(){
 
         HashMap<String,Object> data=new HashMap<>();

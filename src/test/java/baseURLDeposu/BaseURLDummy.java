@@ -9,7 +9,7 @@ public class BaseURLDummy {
 
     @Before
     public void setUp(){
-        specDummy =new RequestSpecBuilder()
+        specDummy = new RequestSpecBuilder()
                 .setBaseUri("http://dummy.restapiexample.com")
                 .build();
     }
