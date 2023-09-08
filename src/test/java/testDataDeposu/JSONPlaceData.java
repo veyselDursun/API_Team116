@@ -46,5 +46,16 @@ public class JSONPlaceData {
         return reqbody;
     }
 
+    public HashMap expBodyOlusturMAP() {
+
+        HashMap<String, Object> reqbody = new HashMap<>();
+        reqbody.put("title", "Ahmet");
+        reqbody.put("body", "Merhaba");
+        reqbody.put("userId", 10.0);
+        reqbody.put("id", 70.0);
+
+        return reqbody;
+    }
+
 
 }

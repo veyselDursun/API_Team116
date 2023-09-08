@@ -41,15 +41,16 @@ public class C21_Put_DeSerialization extends BaseURL_JSONHolder {
 
         specJSONHolder.pathParams("pp1","posts","pp2",70);
         JSONPlaceData jsonplacedata= new JSONPlaceData();
-        HashMap<String,Object> reqData=jsonplacedata.reqBodyOlusturMAP();
 
-        HashMap<String,Object> expdata=jsonplacedata.reqBodyOlusturMAP();
+        HashMap<String,Object> reqData=jsonplacedata.reqBodyOlusturMAP();
+        HashMap<String,Object> expdata=jsonplacedata.expBodyOlusturMAP();
+
 
         Response response=given()
                 .spec(specJSONHolder)
                 .contentType(ContentType.JSON)
                 .when()
-                .body(reqData).put("/{pp1}/{pp2}");
+                .body(reqData).put("{pp1}/{pp2}");
 
         //response.prettyPrint();
 
